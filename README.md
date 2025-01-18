@@ -1,9 +1,9 @@
 # Orders Management System
 
 ## Introduction
-This project is an **Orders Management System** built entirely in English as a personal challenge and practice for both the English language and working with Java using Spring Boot. It integrates a database connection to manage orders and provides a structured backend service.
+This project is an **Orders Management System** built entirely in English as a personal challenge and practice for both the English language and working with Java using Spring Boot. It integrates a database connection to manage orders
 
-Any opinions, suggestions, or criticisms are welcome!
+Any opinions, suggestions, or critics are welcome!
 
 ---
 
