@@ -52,7 +52,7 @@ public class Main {
             switch (option){
 
                 case 1:
-                    System.out.println("Product registration");
+                    registerProduct();
                     break;
 
                 case 2:
@@ -83,9 +83,10 @@ public class Main {
         var productName = scanner.nextLine();
 
         System.out.println("\nProduct price: ");
-        var productPrice = scanner.nextLine();
+        Double productPrice = scanner.nextDouble();
 
-        Product product = new Product();
-
+        Product product = new Product(productName, productPrice);
+        productRepository.save(product);
+        System.out.println("Product " + product.getName() + " has been succesfully registered");
     }
 }
