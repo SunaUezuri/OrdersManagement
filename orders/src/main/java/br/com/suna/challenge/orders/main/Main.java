@@ -1,5 +1,6 @@
 package br.com.suna.challenge.orders.main;
 
+import br.com.suna.challenge.orders.model.Category;
 import br.com.suna.challenge.orders.model.Product;
 import br.com.suna.challenge.orders.repository.CategoryRepository;
 import br.com.suna.challenge.orders.repository.OrderRepository;
@@ -56,7 +57,7 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Category registration");
+                    registerCategory();
                     break;
 
                 case 3:
@@ -87,6 +88,20 @@ public class Main {
 
         Product product = new Product(productName, productPrice);
         productRepository.save(product);
-        System.out.println("Product " + product.getName() + " has been succesfully registered");
+        System.out.println("Product " + product.getName() + " has been succesfully registered!");
+    }
+
+    private void registerCategory() {
+        System.out.println("""
+                Please insert the requested items:
+                
+                Category name:
+                """);
+
+        var categoryName = scanner.nextLine();
+
+        Category category = new Category(categoryName);
+        categoryRepository.save(category);
+        System.out.println("Category " + categoryName + " has been sucessfully registered!");
     }
 }
