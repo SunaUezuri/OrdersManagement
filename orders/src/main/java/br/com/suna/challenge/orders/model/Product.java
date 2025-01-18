@@ -3,7 +3,7 @@ package br.com.suna.challenge.orders.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "t_cll_product")
+@Table(name = "t_cll_products")
 public class Product {
 
     //Class attributes

@@ -3,7 +3,7 @@ package br.com.suna.challenge.orders.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "t_cll_category")
+@Table(name = "t_cll_categorys")
 public class Category {
 
     //Class attributes
