@@ -17,8 +17,7 @@ public class Category {
     //Class constructors
     public Category() {}
 
-    public Category(Long id, String name) {
-        this.id = id;
+    public Category(String name) {
         this.name = name;
     }
 

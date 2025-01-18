@@ -19,8 +19,7 @@ public class Order {
     //Class Constructors
     public Order() {}
 
-    public Order(Long id, LocalDate date) {
-        this.id = id;
+    public Order(LocalDate date) {
         this.date = date;
     }
 
