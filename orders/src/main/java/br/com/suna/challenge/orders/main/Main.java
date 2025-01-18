@@ -1,11 +1,15 @@
 package br.com.suna.challenge.orders.main;
 
 import br.com.suna.challenge.orders.model.Category;
+import br.com.suna.challenge.orders.model.Order;
 import br.com.suna.challenge.orders.model.Product;
 import br.com.suna.challenge.orders.repository.CategoryRepository;
 import br.com.suna.challenge.orders.repository.OrderRepository;
 import br.com.suna.challenge.orders.repository.ProductRepository;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Main {
@@ -61,7 +65,7 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Orders registration");
+                    registerOrder();
                     break;
 
                 case 0:
@@ -103,5 +107,30 @@ public class Main {
         Category category = new Category(categoryName);
         categoryRepository.save(category);
         System.out.println("Category " + categoryName + " has been sucessfully registered!");
+    }
+
+    private void registerOrder() {
+        System.out.println("""
+                Please insert the requested items:
+                
+                Order date (format: yyyy-MM-dd):
+                """);
+
+        var inputDate = scanner.nextLine();
+
+        try {
+                LocalDate orderDate = LocalDate.parse(inputDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                Order order = new Order(orderDate);
+
+                orderRepository.save(order);
+                System.out.println("Order succesfully registered!");
+
+        } catch (DateTimeParseException e){
+            System.out.println("Invalid date format. Please use the format yyyy-MM-dd");
+        }
+    }
+
+    private void listProducts() {
+        
     }
 }
