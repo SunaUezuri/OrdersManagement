@@ -80,6 +80,10 @@ public class Main {
                     listCategories();
                     break;
 
+                case 6:
+                    listOrders();
+                    break;
+
                 case 0:
                     System.out.println("Thanks for your contribution!");
                     break;
@@ -152,5 +156,11 @@ public class Main {
         List<Category> categories = categoryRepository.findAll();
 
         categories.forEach(System.out::println);
+    }
+
+    private void listOrders() {
+        List<Order> orders = orderRepository.findAll();
+
+        orders.forEach(System.out::println);
     }
 }
