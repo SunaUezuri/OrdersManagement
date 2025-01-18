@@ -76,6 +76,10 @@ public class Main {
                     listProducts();
                     break;
 
+                case 5:
+                    listCategories();
+                    break;
+
                 case 0:
                     System.out.println("Thanks for your contribution!");
                     break;
@@ -142,5 +146,11 @@ public class Main {
         List<Product> products = productRepository.findAll();
 
         products.forEach(System.out::println);
+    }
+
+    private void listCategories() {
+        List<Category> categories = categoryRepository.findAll();
+
+        categories.forEach(System.out::println);
     }
 }
