@@ -19,6 +19,15 @@ public class Product {
     @Column(nullable = false)
     private Double price;
 
+    //Class ToString
+
+
+    @Override
+    public String toString() {
+        return "Name: " + name +
+                "\nPrice: " + price;
+    }
+
     //Class constructors
     public Product() {}
 

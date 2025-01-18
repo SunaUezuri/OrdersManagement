@@ -10,6 +10,7 @@ import br.com.suna.challenge.orders.repository.ProductRepository;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -46,6 +47,9 @@ public class Main {
                     1- Register a product
                     2- Register a category
                     3- Register a order
+                    4- List products
+                    5- List categories
+                    6- List orders
                     
                     0- exit
                     """;
@@ -66,6 +70,10 @@ public class Main {
 
                 case 3:
                     registerOrder();
+                    break;
+
+                case 4:
+                    listProducts();
                     break;
 
                 case 0:
@@ -131,6 +139,8 @@ public class Main {
     }
 
     private void listProducts() {
-        
+        List<Product> products = productRepository.findAll();
+
+        products.forEach(System.out::println);
     }
 }

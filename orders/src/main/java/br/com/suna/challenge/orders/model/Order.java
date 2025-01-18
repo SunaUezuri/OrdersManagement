@@ -16,6 +16,14 @@ public class Order {
     @Column(name = "regist_date")
     private LocalDate date;
 
+    //Class ToString
+
+
+    @Override
+    public String toString() {
+        return "Registrated on: " + date;
+    }
+
     //Class Constructors
     public Order() {}
 

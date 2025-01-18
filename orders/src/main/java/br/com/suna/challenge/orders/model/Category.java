@@ -14,6 +14,14 @@ public class Category {
     @Column(nullable = false)
     private String name;
 
+    //Class ToString
+
+
+    @Override
+    public String toString() {
+        return "Name: " + name;
+    }
+
     //Class constructors
     public Category() {}
 
