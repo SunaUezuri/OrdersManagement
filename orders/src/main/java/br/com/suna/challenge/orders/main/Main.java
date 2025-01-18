@@ -33,6 +33,13 @@ public class Main {
 
 
     public void showMenu() {
+        /*
+        * This method uses texts to give the users
+        * the information needed and utilizes a while loop
+        * to make sure that the user type a valid option
+        * of the switch-case without reseting the program
+        */
+
         var option = -1;
         System.out.println("""
                 Welcome to our orders management system!
@@ -95,6 +102,17 @@ public class Main {
     }
 
     private void registerProduct() {
+        /*
+        * This method utilizes JPA to make operation
+        * Create from the CRUD for the class Product.
+        *
+        * productName: variable to save the name of the
+        * product inserted
+        *
+        * productPrice: variable to save the price in the Double
+        * format of the product
+        */
+
         System.out.println("""
                 Please insert the requested items.
                 
@@ -112,6 +130,14 @@ public class Main {
     }
 
     private void registerCategory() {
+        /*
+         * This method utilizes JPA to make operation
+         * Create from the CRUD for the class Category
+         *
+         * categoryName: Variable to save the name of the
+         * category inserted
+         */
+
         System.out.println("""
                 Please insert the requested items:
                 
@@ -126,6 +152,21 @@ public class Main {
     }
 
     private void registerOrder() {
+        /*
+         * This method utilizes JPA to make operation
+         * Create from the CRUD for the class Order.
+         *
+         * It uses a try and catch to make sure that
+         * the user insert the date in the right format,
+         * and if not give a message explaining the error.
+         *
+         * inputDate: variable to save the date inserted
+         * by the user
+         *
+         * orderDate = object that converts the String of inputDate
+         * into a LocalDate object
+         */
+
         System.out.println("""
                 Please insert the requested items:
                 
@@ -147,18 +188,36 @@ public class Main {
     }
 
     private void listProducts() {
+        /*
+        * Method that uses a List to save all the products
+        * encoutered in the database and after that it
+        * shows all the encoutered items in it
+        */
+
         List<Product> products = productRepository.findAll();
 
         products.forEach(System.out::println);
     }
 
     private void listCategories() {
+        /*
+         * Method that uses a List to save all the categories
+         * encoutered in the database and after that it
+         * shows all the encoutered items in it
+         */
+
         List<Category> categories = categoryRepository.findAll();
 
         categories.forEach(System.out::println);
     }
 
     private void listOrders() {
+        /*
+         * Method that uses a List to save all the orders
+         * encoutered in the database and after that it
+         * shows all the encoutered items in it
+         */
+
         List<Order> orders = orderRepository.findAll();
 
         orders.forEach(System.out::println);
